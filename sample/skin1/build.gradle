@@ -1,0 +1,11 @@
+apply plugin: "com.android.application"
+apply plugin: zhupff.skins.SkinPackagePlugin
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 24
+        applicationId "zhupff.skins.kda"
+    }
+}

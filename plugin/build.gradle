@@ -1,0 +1,7 @@
+apply plugin: "org.jetbrains.kotlin.jvm"
+apply from: rootProject.file("gradle/scripts/publish.gradle")
+
+dependencies {
+    compileOnly gradleApi()
+    compileOnly "com.android.tools.build:gradle:7.1.1"
+}

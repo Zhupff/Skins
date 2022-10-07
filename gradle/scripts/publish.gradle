@@ -1,0 +1,35 @@
+apply plugin: "maven-publish"
+
+if (System.getenv("JITPACK") == "true") {
+    if (project.plugins.hasPlugin("com.android.library")) {
+        afterEvaluate {
+            publishing {
+                repositories {
+                    it.mavenLocal()
+                }
+                publications {
+                    jitpack(MavenPublication) {
+                        from components.release
+                        groupId = "com.github.Zhupff.Skins"
+                        artifactId = project.name
+                    }
+                }
+            }
+        }
+    } else {
+        afterEvaluate {
+            publishing {
+                repositories {
+                    it.mavenLocal()
+                }
+                publications {
+                    jitpack(MavenPublication) {
+                        from components.java
+                        groupId = "com.github.Zhupff.Skins"
+                        artifactId = project.name
+                    }
+                }
+            }
+        }
+    }
+}

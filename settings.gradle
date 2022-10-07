@@ -1,0 +1,25 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Skins"
+include ":sample"
+include ":plugin"
+include ":core"
+include ":ext"
+include ":sample:skin1"
+include ":sample:skin2"
+include ":sample:skin3"
+include ":sample:skin4"
